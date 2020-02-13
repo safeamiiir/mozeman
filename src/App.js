@@ -1,26 +1,20 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React, { Component } from 'react';
+import {Home, My404Component} from './_components/index';
+import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
+import './_styles/App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          <code style={{ color: "yellow" }}>MOZEMAN</code> will be start soon :)
-        </p>
-        <a
-          className="App-link"
-          href="http://safehian-cv.ir"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          By safeamiiir
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return(
+      <Router>
+        <Switch>
+          <Route path="/home" exact={true} component={Home}/>
+          <Route path="/" exact={true} component={Home}/>
+          <Route path='*' exact={true} component={My404Component} />
+        </Switch>
+      </Router>
+    )
+  }
 }
 
 export default App;
