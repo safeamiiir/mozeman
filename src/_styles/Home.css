@@ -4,6 +4,12 @@
       height: 30vmin;
 }
 
+.app-logo-move {
+      height: 30vmin;
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+}
+
 @keyframes App-logo-spin {
     from {
       transform: rotate(0deg);
