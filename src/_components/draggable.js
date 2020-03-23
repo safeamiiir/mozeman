@@ -11,7 +11,9 @@ const Draggable = ({ position, radius }) => {
 
   // mouse move
   const handleMouseMove = useCallback(
-    ({ clientX, clientY }) => {
+    e => {
+      let { clientX, clientY } = e.changedTouches[0];
+      console.log("state.isDragging", state.isDragging);
       if (state.isDragging) {
         setState(prevState => ({
           ...prevState,
@@ -42,19 +44,19 @@ const Draggable = ({ position, radius }) => {
   }, []);
 
   useEffect(() => {
-    window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("mouseup", handleMouseUp);
+    window.addEventListener("touchmove", handleMouseMove);
+    window.addEventListener("touchmove", handleMouseUp);
 
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("mouseup", handleMouseUp);
+      window.removeEventListener("touchmove", handleMouseMove);
+      window.removeEventListener("touchmove", handleMouseUp);
     };
   }, [handleMouseMove, handleMouseUp]);
 
   return (
     <Circle
       isDragging={state.isDragging}
-      onMouseDown={handleMouseDown}
+      onTouchMove={handleMouseDown}
       radius={radius}
       x={state.translateX}
       y={state.translateY}
