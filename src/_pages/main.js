@@ -5,7 +5,7 @@ import Draggable from "../_components/draggable";
 function MainPage() {
   return (
     <Grid className="App">
-      <Draggable position={{ x: 250, y: 250 }} radius={96}/>
+      <Draggable position={{ x: 250, y: 250 }} radius={38}/>
     </Grid>
   );
 }

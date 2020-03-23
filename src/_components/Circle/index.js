@@ -9,8 +9,8 @@ const Circle = styled.div.attrs(({ x, y, radius }) => ({
   background: url(${logo});
   cursor: grab;
   position: absolute;
-  width: 192px;
-  height: 192px;
+  width: 76px;
+  height: 76px;
 
   ${({ isDragging }) => isDragging && `opacity: 0.8;cursor: grabbing;`}
 `;

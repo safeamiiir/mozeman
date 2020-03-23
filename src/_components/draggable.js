@@ -74,10 +74,10 @@ Draggable.propTypes = {
 
 Draggable.defaultProps = {
   position: {
-    x: 192,
-    y: 192
+    x: 76,
+    y: 76
   },
-  radius: 96
+  radius: 38
 };
 
 export default Draggable;
