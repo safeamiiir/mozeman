@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import Draggable from "./draggable";
 
@@ -8,6 +8,12 @@ const useStyles = makeStyles({
     background: "linear-gradient(45deg, #6bfeba 30%, #FFC107 90%)",
     height: "100vh",
     overflow: "hidden"
+  },
+  nameFloat: {
+    width: "100%",
+    position: "absolute",
+    top: 8,
+    textAlign: "center"
   }
 });
 
@@ -15,7 +21,12 @@ function MainPageComponent() {
   const classes = useStyles();
   return (
     <Grid className={classes.root}>
-      <Draggable position={{ x: 250, y: 250 }} radius={38} />
+      <Grid className={classes.nameFloat}>
+        <Typography>
+          <strong>Just Move It!</strong>
+        </Typography>
+      </Grid>
+      <Draggable position={{ x: 150, y: 150 }} radius={38} />
     </Grid>
   );
 }
