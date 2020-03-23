@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import MainPageComponent from "../_components/MainPageComponent";
+import Draggable from "./draggable";
 
 const useStyles = makeStyles({
   root: {
@@ -11,13 +11,13 @@ const useStyles = makeStyles({
   }
 });
 
-function MainPage() {
+function MainPageComponent() {
   const classes = useStyles();
   return (
     <Grid className={classes.root}>
-      <MainPageComponent />
+      <Draggable position={{ x: 250, y: 250 }} radius={38} />
     </Grid>
   );
 }
 
-export default MainPage;
+export default MainPageComponent;
